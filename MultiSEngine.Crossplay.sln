@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31808.319
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSEngine.Crossplay", "MultiSEngine.Crossplay\MultiSEngine.Crossplay.csproj", "{9754D6B3-6E1E-4979-91BD-228F74BFDC6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9754D6B3-6E1E-4979-91BD-228F74BFDC6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9754D6B3-6E1E-4979-91BD-228F74BFDC6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9754D6B3-6E1E-4979-91BD-228F74BFDC6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9754D6B3-6E1E-4979-91BD-228F74BFDC6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D56472F-F47C-4D3C-8590-92AB2D0D8FEE}
+	EndGlobalSection
+EndGlobal
