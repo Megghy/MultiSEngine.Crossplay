@@ -5,17 +5,13 @@
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="MultiSEngine">
-      <HintPath>..\..\MultiSEngine\MultiSEngine\bin\Release\net6.0\MultiSEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="TrProtocol">
-      <HintPath>..\..\MultiSEngine\MultiSEngine\bin\Release\net6.0\TrProtocol.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy $(TargetPath) D:\Code\MultiSEngine\MultiSEngine\bin\Release\net6.0\Plugins\*.* /S /D /Y" />
   </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MultiSEngine\MultiSEngine\MultiSEngine.csproj" />
+    <ProjectReference Include="..\..\TrProtocol\TrProtocol\TrProtocol.csproj" />
+  </ItemGroup>
 
 </Project>

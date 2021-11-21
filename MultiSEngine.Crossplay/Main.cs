@@ -1,4 +1,5 @@
 ﻿using MultiSEngine.Core;
+using MultiSEngine.DataStruct.EventArgs;
 using MultiSEngine.Modules;
 using System;
 using System.Collections.Generic;
@@ -105,7 +106,7 @@ namespace MultiSEngine.Crossplay
             Hooks.SendPacket += OnSendPacket;
             Hooks.PlayerJoin += OnJoin;
         }
-        public static void OnSendPacket(Hooks.SendPacketEventArgs args)
+        public static void OnSendPacket(SendPacketEventArgs args)
         {
             if (args.Client.Player.VersionNum < 235)
             {
@@ -198,15 +199,10 @@ namespace MultiSEngine.Crossplay
                             }
                             break;
                         case TrProtocol.Packets.Modules.NetBestiaryModule bestiary:
-                            using (var reader = new BinaryReader(new MemoryStream(bestiary.Extra)))
+                            if (bestiary.Data.NPCNetID > MaxNPCID[args.Client.Player.VersionNum])
                             {
-                                byte unlockType = reader.ReadByte();
-                                short npcID = reader.ReadInt16();
-                                if (npcID > MaxNPCID[args.Client.Player.VersionNum])
-                                {
-                                    Logs.Info($"[Crossplay] NetModule (Bestiary) Blocked NpcType {npcID} to player {args.Client.Name}");
-                                    args.Handled = true;
-                                }
+                                Logs.Info($"[Crossplay] NetModule (Bestiary) Blocked NpcType {bestiary.Data.NPCNetID} to player {args.Client.Name}");
+                                args.Handled = true;
                             }
                             break;
                         case TrProtocol.Packets.Modules.NetCreativeUnlocksModule unlock:
@@ -256,7 +252,7 @@ namespace MultiSEngine.Crossplay
                 }
             }
         }
-        public void OnJoin(Hooks.PlayerJoinEventArgs args)
+        public void OnJoin(PlayerJoinEventArgs args)
         {
             if (args.Version.StartsWith("Terraria") && int.TryParse(args.Version[8..], out var num) && num < 235)
             {
