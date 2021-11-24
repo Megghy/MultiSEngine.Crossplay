@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(TargetPath) D:\Code\MultiSEngine\MultiSEngine\bin\Release\net6.0\Plugins\*.* /S /D /Y" />
+    <Exec Command="xcopy $(TargetPath) D:\Code\MultiSEngine\MultiSEngine\bin\Release\net6.0\Plugins\*.* /S /D /Y&#xD;&#xA;xcopy $(TargetPath) D:\Code\MultiSEngine\MultiSEngine\bin\Debug\net6.0\Plugins\*.* /S /D /Y" />
   </Target>
 
   <ItemGroup>

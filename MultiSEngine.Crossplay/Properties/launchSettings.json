@@ -4,10 +4,15 @@
       "commandName": "Project",
       "workingDirectory": "D:\\Code\\MultiSEngine\\MultiSEngine\\bin\\Release"
     },
-    "配置文件 1": {
+    "Release": {
       "commandName": "Executable",
       "executablePath": "D:\\Code\\MultiSEngine\\MultiSEngine\\bin\\Release\\net6.0\\MultiSEngine.exe",
       "workingDirectory": "D:\\Code\\MultiSEngine\\MultiSEngine\\bin\\Release\\net6.0"
+    },
+    "Debug": {
+      "commandName": "Executable",
+      "executablePath": "D:\\Code\\MultiSEngine\\MultiSEngine\\bin\\Debug\\net6.0\\MultiSEngine.exe",
+      "workingDirectory": "D:\\Code\\MultiSEngine\\MultiSEngine\\bin\\Debug\\net6.0"
     }
   }
 }
